@@ -1,0 +1,30 @@
+server:
+  port: 8079
+spring:
+  application:
+    name: es-syc-demo
+  elasticsearch:
+    rest:
+      uris: localhost:9200
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      validation-timeout: 3000
+      idle-timeout: 60000
+      auto-commit: 'true'
+      minimum-idle: 5
+      maximum-pool-size: 2000
+      pool-name: DatebookHikariCP
+      max-lifetime: 60000
+    url: >-
+      jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
+    username: root
+    password: 'aaa'
+    type: com.zaxxer.hikari.HikariDataSource
+  profiles:
+    active: dev
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: 'true'
+  mapper-locations: 'classpath*:mapper/*.xml'
