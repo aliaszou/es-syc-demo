@@ -69,7 +69,7 @@ public interface OrderMapper {
     int updateReceivingStatus(@Param("tradeNo") String tradeNo, @Param("status") Integer status, @Param("receivingTime") Date receivingTime);
 
     /**
-     * 逻辑删除
+     * 取消单据
      *
      * @param tradeNo
      * @return

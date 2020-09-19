@@ -53,11 +53,11 @@ public interface TestOrderService {
     void updateReceivingStatus(String tradeNo, Integer status, Date receivingTime);
 
     /**
-     * 逻辑删除
+     * 取消单据
      *
      * @param tradeNo
      */
-    void deleteLogic(String tradeNo);
+    void cancel(String tradeNo);
 
     /**
      * 物理删除

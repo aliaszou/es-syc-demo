@@ -3,6 +3,9 @@ package com.mingo.es.sync.repository;
 import com.mingo.es.sync.document.OrderEntity;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
+import java.util.Date;
+import java.util.List;
+
 /**
  * EsOrderDocRepository
  *
@@ -17,4 +20,11 @@ public interface EsOrderDocRepository extends ElasticsearchRepository<OrderEntit
      * @return
      */
     OrderEntity findByTradeNo(String tradeNo);
+
+    /**
+     * 查询大于某一个时刻的单据
+     *
+     * @return
+     */
+    List<OrderEntity> findByCreateTimeGreaterThan(Date createTime);
 }

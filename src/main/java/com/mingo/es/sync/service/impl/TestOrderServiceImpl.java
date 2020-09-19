@@ -86,16 +86,16 @@ public class TestOrderServiceImpl implements TestOrderService {
      */
     @Override
     public void updateReceivingStatus(String tradeNo, Integer status, Date receivingTime) {
-        orderMapper.updateDeliveryStatus(tradeNo, status, receivingTime);
+        orderMapper.updateReceivingStatus(tradeNo, status, receivingTime);
     }
 
     /**
-     * 逻辑删除
+     * 取消单据
      *
      * @param tradeNo
      */
     @Override
-    public void deleteLogic(String tradeNo) {
+    public void cancel(String tradeNo) {
         orderMapper.updateStatus(tradeNo, 0);
     }
 
